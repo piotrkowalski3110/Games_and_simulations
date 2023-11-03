@@ -1,0 +1,7 @@
+#idGame {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
+    border: 1px solid darkgray;
+}
