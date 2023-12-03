@@ -33,4 +33,19 @@ class PlayerType {
         const { x, y, nWidth, nHeight, bFlipH } = this.kvOptions;
         this.AnimationCurrent.draw(x, y, nWidth, nHeight, bFlipH);
     }
+    setFlipH(abFlip) {
+        this.kvOptions.bFlipH = abFlip;
+    }
+    setX(x) {
+        this.kvOptions.x = x;
+    }
+    setY(y) {
+        this.kvOptions.y = y;
+    }
+    getX() {
+        return this.kvOptions.x;
+    }
+    getY() {
+        return this.kvOptions.y;
+    }
 }

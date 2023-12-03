@@ -35,7 +35,7 @@ class KeyboardType {
         return this.kvKeys[KEY_RIGHT] && !this.kvKeys[KEY_LEFT]
     }
 
-    isKick(): boolean {
+    isAttack(): boolean {
         return this.kvKeys[KEY_E]
     }
 }

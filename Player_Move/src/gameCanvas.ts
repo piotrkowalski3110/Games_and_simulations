@@ -1,4 +1,5 @@
 import PlayerType from "./gameCanvas_Player.js"
+import PlayerUserType from "./gameCanvas_PlayerUser.js";
 import AnimationType from "./gameCanvas_Animation.js"
 
 document.addEventListener("DOMContentLoaded", onReady)
@@ -23,28 +24,31 @@ function onReady() {
         return
     }
 
-    const aBackgorund = new PlayerType({nWidth: 640, nHeight: 480})
-    const aMusketeerPlayer = new PlayerType({x: 100, y: 220, nWidth: 50, nHeight: 71, bFlipH: false})
-    const aKnightEnemy = new PlayerType({x: 400, y: 250, nWidth: 71, nHeight: 66, bFlipH: true})
-    const aAnimBackground = new AnimationType({strURL: "images/game_background.jpg", context: aContext})
-    const aAnimStandMusketeerPlayer = new AnimationType({
-        strURL: "images/Musketeer_Idle.png",
-        context: aContext,
-        nRate: 300
-    })
+    const aBackgorund = new PlayerType({
+        nWidth: 640,
+        nHeight: 480});
+
+    const aMusketeerPlayer = new PlayerUserType({
+        context: aContext});
+
+    const aKnightEnemy = new PlayerType({
+        x: 400,
+        y: 250,
+        nWidth: 71,
+        nHeight: 66,
+        bFlipH: true});
+
+    const aAnimBackground = new AnimationType({
+        strURL: "images/game_background.jpg",
+        context: aContext});
+
     const aAnimStandEnemyKnightEnemy = new AnimationType({
         strURL: "images/Knight_Idle.png",
         context: aContext,
-        nRate: 300
+        nRate: 350
     })
 
     aAnimBackground.appendFrame(0, 0);
-
-    aAnimStandMusketeerPlayer.appendFrame(39, 57)
-    aAnimStandMusketeerPlayer.appendFrame(167, 57)
-    aAnimStandMusketeerPlayer.appendFrame(295, 56)
-    aAnimStandMusketeerPlayer.appendFrame(423, 56)
-    aAnimStandMusketeerPlayer.appendFrame(551, 57)
 
     aAnimStandEnemyKnightEnemy.appendFrame(28, 62)
     aAnimStandEnemyKnightEnemy.appendFrame(156, 61)
@@ -54,16 +58,25 @@ function onReady() {
     aAnimStandEnemyKnightEnemy.appendFrame(668, 61)
 
     aBackgorund.setAnimation(aAnimBackground)
-    aMusketeerPlayer.setAnimation(aAnimStandMusketeerPlayer)
     aKnightEnemy.setAnimation(aAnimStandEnemyKnightEnemy)
 
-    function gameLoop() {
+    function gameLoop(adTimestamp: number) {
+        let adElapsedTime = (adTimestamp - adTimeOld) * 0.001;
+
+        aMusketeerPlayer.update(adElapsedTime)
+
         aBackgorund.draw()
-        aMusketeerPlayer.draw()
         aKnightEnemy.draw()
+        aMusketeerPlayer.draw()
+
+        adTimeOld = adTimestamp
         requestAnimationFrame(gameLoop)
     }
 
     aCanvas.style.display = "block"
+
+    let adTimeOld = performance.now();
+    let adTimeStart = adTimeOld;
+
     requestAnimationFrame(gameLoop)
 }

@@ -2,7 +2,7 @@ import AnimationType from "./gameCanvas_Animation.js";
 
 export {PlayerType as default}
 
-type MyPlayerOptions = {
+export type MyPlayerOptions = {
     x: number,
     y: number,
     nWidth: number,
@@ -53,5 +53,25 @@ class PlayerType {
 
         const {x, y, nWidth, nHeight, bFlipH} = this.kvOptions;
         this.AnimationCurrent.draw(x, y, nWidth, nHeight, bFlipH)
+    }
+
+    setFlipH(abFlip:boolean){
+        this.kvOptions.bFlipH = abFlip
+    }
+
+    setX(x:number){
+        this.kvOptions.x = x
+    }
+
+    setY(y:number){
+        this.kvOptions.y = y
+    }
+
+    getX():number{
+        return this.kvOptions.x
+    }
+
+    getY():number{
+        return this.kvOptions.y
     }
 }

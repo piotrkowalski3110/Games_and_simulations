@@ -1,3 +1,4 @@
+/// <reference path="./mytypes.d.ts"/>
 export { AnimationType as default };
 class AnimationType {
     constructor(akvOptionsIn) {
