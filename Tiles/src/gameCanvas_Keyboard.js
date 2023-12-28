@@ -3,7 +3,6 @@ const KEY_LEFT = "ArrowLeft", KEY_RIGHT = "ArrowRight", KEY_E = "e";
 class KeyboardType {
     constructor() {
         this.kvKeys = {};
-        this.kvKeys = {};
         [KEY_LEFT, KEY_RIGHT, KEY_E].forEach(aKey => {
             this.kvKeys[aKey] = false;
         });

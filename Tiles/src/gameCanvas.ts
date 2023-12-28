@@ -36,10 +36,10 @@ function onReady() {
 
     const aBackgorund2 = new BackgroundType({
         nWorldWidth: 640,
-        y: 160,
-        nWidth: 640,
-        nHeight: 480,
-        strURL: "images/game_background.jpg",
+        y: 50,
+        nWidth: 272,
+        nHeight: 62,
+        strURL: "images/clouds.png",
         context: aContext
     });
 
@@ -48,8 +48,8 @@ function onReady() {
     });
 
     const aKnightEnemy = new PlayerType({
-        x: 400,
-        y: 250,
+        x: 300,
+        y: 125,
         nWidth: 71,
         nHeight: 66,
         bFlipH: true
@@ -74,24 +74,24 @@ function onReady() {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 2, 3, 0, 0, 1, 3, 0, 0, 1, 2, 2, 3, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 1, 2, 2, 3, 3, 2, 2, 1, 2, 3, 1, 2, 2, 3, 3, 2, 2, 1, 2]
+        [1, 2, 2, 2, 2, 3, 0, 0, 1, 3, 0, 1, 3, 0, 1, 2, 2, 3, 0, 0]
     ];
 
     const aAnimTile0 = new AnimationType({
-        strURL: "images/Tiles/tile22.png",
+        strURL: "images/Tiles/Ground_10.png",
         context: aContext
     });
 
     const aAnimTile1 = new AnimationType({
-        strURL: "images/Tiles/tile23.png",
+        strURL: "images/Tiles/Ground_11.png",
         context: aContext
     });
 
     const aAnimTile2 = new AnimationType({
-        strURL: "images/Tiles/tile24.png",
+        strURL: "images/Tiles/Ground_12.png",
         context: aContext
     });
 
@@ -100,8 +100,8 @@ function onReady() {
     aAnimTile2.appendFrame(0, 0)
 
     const aTiles = new TilesType({
-        nTileWidth: 70,
-        nTileHeight: 70,
+        nTileWidth: 64,
+        nTileHeight: 64,
         vvMapTiles: aMapTiles_Level0,
         vAnimations: [aAnimTile0, aAnimTile1, aAnimTile2],
         context: aContext

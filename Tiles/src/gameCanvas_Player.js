@@ -26,12 +26,12 @@ class PlayerType {
             aAnimation.setCurrentFrameIndex(0);
         }
     }
-    draw() {
+    draw(adOffsetX) {
         if (!this.AnimationCurrent) {
             return;
         }
         const { x, y, nWidth, nHeight, bFlipH } = this.kvOptions;
-        this.AnimationCurrent.draw(x, y, nWidth, nHeight, bFlipH);
+        this.AnimationCurrent.draw(x - adOffsetX, y, nWidth, nHeight, bFlipH);
     }
     setFlipH(abFlip) {
         this.kvOptions.bFlipH = abFlip;
@@ -47,5 +47,8 @@ class PlayerType {
     }
     getY() {
         return this.kvOptions.y;
+    }
+    getWidth() {
+        return this.kvOptions.nWidth;
     }
 }

@@ -1,6 +1,6 @@
-import PlayerType from "./gameCanvas_Player";
-import AnimationType from "./gameCanvas_Animation";
-import {type MyPlayerOptions} from "./gameCanvas_Player";
+import PlayerType from "./gameCanvas_Player.js";
+import AnimationType from "./gameCanvas_Animation.js";
+import {type MyPlayerOptions} from "./gameCanvas_Player.js";
 
 export {BackgroundType as default}
 

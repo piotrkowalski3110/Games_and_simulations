@@ -1,7 +1,7 @@
 /// <reference path="./mytypes.d.ts"/>
 
-import PlayerType from "./gameCanvas_Player";
-import type AnimationType from "./gameCanvas_Animation";
+import PlayerType from "./gameCanvas_Player.js";
+import type AnimationType from "./gameCanvas_Animation.js";
 
 export {TilesType as default}
 
